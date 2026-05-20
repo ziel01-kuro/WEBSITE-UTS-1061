@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Us | AURA AUDIO</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary-fixed-dim": "#c6c6c7",
+                      "surface-container-highest": "#353534",
+                      "surface-bright": "#393939",
+                      "background": "#131313",
+                      "primary-fixed": "#f0dbff",
+                      "on-surface": "#e5e2e1",
+                      "secondary": "#c6c6c7",
+                      "surface-container-high": "#2a2a2a",
+                      "inverse-surface": "#e5e2e1",
+                      "tertiary-container": "#997000",
+                      "on-secondary-fixed-variant": "#454747",
+                      "on-secondary": "#2f3131",
+                      "outline-variant": "#4c4353",
+                      "inverse-primary": "#8135c5",
+                      "tertiary": "#f1bf54",
+                      "primary-container": "#9b51e0",
+                      "on-error": "#690005",
+                      "primary": "#deb7ff",
+                      "on-background": "#e5e2e1",
+                      "on-error-container": "#ffdad6",
+                      "on-primary": "#4a007f",
+                      "error": "#ffb4ab",
+                      "on-tertiary-fixed": "#261900",
+                      "on-primary-fixed-variant": "#670fac",
+                      "on-primary-container": "#ffffff",
+                      "surface-variant": "#353534",
+                      "on-primary-fixed": "#2c0050",
+                      "on-tertiary": "#402d00",
+                      "tertiary-fixed": "#ffdea2",
+                      "on-secondary-container": "#b4b5b5",
+                      "secondary-fixed": "#e2e2e2",
+                      "on-secondary-fixed": "#1a1c1c",
+                      "on-tertiary-fixed-variant": "#5c4200",
+                      "surface-tint": "#deb7ff",
+                      "inverse-on-surface": "#313030",
+                      "tertiary-fixed-dim": "#f1bf54",
+                      "secondary-container": "#454747",
+                      "surface-container-low": "#1c1b1b",
+                      "on-surface-variant": "#cfc2d5",
+                      "outline": "#988d9e",
+                      "surface-dim": "#131313",
+                      "surface": "#131313",
+                      "on-tertiary-container": "#080400",
+                      "primary-fixed-dim": "#deb7ff",
+                      "surface-container": "#201f1f",
+                      "error-container": "#93000a",
+                      "surface-container-lowest": "#0e0e0e"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "section-gap": "80px",
+                      "margin-desktop": "64px",
+                      "gutter": "24px",
+                      "base": "8px",
+                      "margin-mobile": "16px"
+              },
+              "fontFamily": {
+                      "display-lg-mobile": [
+                              "Montserrat"
+                      ],
+                      "body-md": [
+                              "Montserrat"
+                      ],
+                      "label-caps": [
+                              "Montserrat"
+                      ],
+                      "headline-md": [
+                              "Montserrat"
+                      ],
+                      "display-lg": [
+                              "Montserrat"
+                      ]
+              },
+              "fontSize": {
+                      "display-lg-mobile": [
+                              "40px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.0",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "64px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        /* Neumorphic Extruded Utility */
+        .neumorphic-extruded {
+            background-color: #121212;
+            box-shadow: -5px -5px 10px #1b1b1b, 5px 5px 10px #090909;
+        }
+        /* Neumorphic Inset Utility */
+        .neumorphic-inset {
+            background-color: #121212;
+            box-shadow: inset -5px -5px 10px #1b1b1b, inset 5px 5px 10px #090909;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="bg-background dark:bg-background shadow-[-5px_-5px_10px_rgba(27,27,27,1),5px_5px_10px_rgba(9,9,9,1)] w-full top-0 z-50 sticky">
+<div class="flex justify-between items-center w-full px-margin-desktop py-base max-w-full mx-auto">
+<!-- Brand Logo -->
+<a class="font-display-lg text-headline-md font-bold text-on-surface tracking-tighter" href="#">
+                AURA AUDIO
+            </a>
+<!-- Desktop Navigation Links -->
+<div class="hidden md:flex space-x-gutter items-center">
+<a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300 font-label-caps text-label-caps tracking-widest hover:scale-105 transition-transform duration-200" href="#">CUSTOM</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300 font-label-caps text-label-caps tracking-widest hover:scale-105 transition-transform duration-200" href="#">UNIVERSAL</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300 font-label-caps text-label-caps tracking-widest hover:scale-105 transition-transform duration-200" href="#">ACCESSORIES</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300 font-label-caps text-label-caps tracking-widest hover:scale-105 transition-transform duration-200" href="#">MERCH</a>
+<a class="text-primary border-b border-primary/30 pb-1 font-label-caps text-label-caps tracking-widest hover:scale-105 transition-transform duration-200" href="#">SUPPORT</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300 font-label-caps text-label-caps tracking-widest hover:scale-105 transition-transform duration-200" href="#">HOW TO ORDER</a>
+</div>
+<!-- Trailing Icons -->
+<div class="flex space-x-base items-center text-primary dark:text-primary">
+<button aria-label="person" class="cursor-pointer active:shadow-[inset_-2px_-2px_5px_rgba(27,27,27,1),inset_2px_2px_5px_rgba(9,9,9,1)] p-2 rounded-full hover:scale-105 transition-transform duration-200">
+<span class="material-symbols-outlined">person</span>
+</button>
+<button aria-label="shopping_cart" class="cursor-pointer active:shadow-[inset_-2px_-2px_5px_rgba(27,27,27,1),inset_2px_2px_5px_rgba(9,9,9,1)] p-2 rounded-full hover:scale-105 transition-transform duration-200">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+<button aria-label="menu" class="md:hidden cursor-pointer active:shadow-[inset_-2px_-2px_5px_rgba(27,27,27,1),inset_2px_2px_5px_rgba(9,9,9,1)] p-2 rounded-full hover:scale-105 transition-transform duration-200">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex flex-col pt-section-gap px-margin-mobile md:px-margin-desktop gap-section-gap">
+<!-- Hero Section -->
+<section class="flex flex-col items-center text-center space-y-gutter max-w-4xl mx-auto">
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary tracking-tighter">
+                ENGINEERED FOR PRECISION.
+            </h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+                At Aura Audio, we believe that sound is not just heard, it is felt. Our commitment to bespoke acoustic engineering ensures that every note, every breath, and every vibration is delivered with absolute clarity.
+            </p>
+</section>
+<!-- Bento Grid Layout -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Bespoke Acoustic Tuning -->
+<div class="neumorphic-extruded rounded-xl p-8 flex flex-col justify-between space-y-6 lg:col-span-2 hover:scale-[1.02] transition-transform duration-300">
+<div class="space-y-4">
+<h2 class="font-headline-md text-headline-md text-primary">Bespoke Acoustic Tuning</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        Every ear is unique, and so is our approach. We tailor the frequency response to match the exact physical geometry of your ear canal, guaranteeing a soundstage that is both expansive and intimate. The result is an uncompromising audio experience that reveals the hidden layers in your favorite tracks.
+                    </p>
+</div>
+<div class="h-64 w-full rounded-lg bg-surface-container-high overflow-hidden relative">
+<img alt="Acoustic Tuning" class="w-full h-full object-cover mix-blend-luminosity opacity-80" data-alt="A highly detailed close-up shot of an intricate, custom-molded in-ear monitor shell resting on a dark, textured charcoal surface. The lighting is moody and dramatic, with a subtle purple spotlight highlighting the internal drivers and polished acrylic finish. The overall aesthetic is high-tech luxury audiophile gear, emphasizing craftsmanship." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCw-MhPAF2bdiVSq134NLL8nr-SL426inFY9098DP3KmBGWCM7sBMHSurMxiC5DOcWWEvunAPLPnq4ye1xxyepg8EzQUXSD23HhQ4vWZUVDhhFkrfSaV7CNw6dqe4_hKKtsnhfGH8hvLRX2KIi7sFTJvLSaURvF0_YCCu2aMlFjUoGJCjy6xkAEy0oF5SFtFA7kVZWykqLdl6htM9dgUKTMQFs8DUdAmuGREfaxWLy-CMKDQMY-_P51HanM1LiQ4CMlDNh-bo5QNs4K"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
+</div>
+</div>
+<!-- Premium Craftsmanship -->
+<div class="neumorphic-extruded rounded-xl p-8 flex flex-col space-y-6 hover:scale-[1.02] transition-transform duration-300">
+<div class="space-y-4">
+<h2 class="font-headline-md text-headline-md text-primary">Premium Craftsmanship</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        Machined from aerospace-grade aluminum and finished with medical-grade resin, our enclosures are built to withstand the rigors of touring while maintaining the elegance of a fine timepiece.
+                    </p>
+</div>
+<div class="flex-grow rounded-lg bg-surface-container-high overflow-hidden relative min-h-[200px]">
+<img alt="Craftsmanship" class="w-full h-full object-cover mix-blend-luminosity opacity-80" data-alt="A macro photograph of raw materials used in high-end audio gear production, featuring a block of milled aluminum and a drop of clear resin on a dark slate background. Soft, diffused lighting emphasizes the metallic texture and the glossy reflection of the resin. The mood is industrial yet refined, fitting a luxury brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBrmmtw0IFoU2g-SVH-bVgb8BOD3uwfaT5VrSpUXqWjcpvZqQlMKss-lvc6C_pejorBOCR7RAVabkM-UMGsQrDnP00sRlq8H0sk4qBSN4DuuxTrb7_J9P7g0fNFEABcsLXA5Mh-Ksc8bIljPuGn9L8Om6EtH0N6tNXX0QZieFhF1VcscsX0c8l06NUw73Rj5z0Supzg3MyMNKpZjLzR8dCjOQ57kLO7x1Wt36YcaJbwGQIBqTGMcgOst28IbwqNCF1v1YG1t-b0oaQ"/>
+</div>
+</div>
+<!-- Multi-Driver Configurations -->
+<div class="neumorphic-extruded rounded-xl p-8 flex flex-col lg:flex-row lg:col-span-3 gap-8 items-center hover:scale-[1.01] transition-transform duration-300">
+<div class="flex-1 rounded-lg bg-surface-container-high overflow-hidden relative w-full h-64 lg:h-full min-h-[250px]">
+<img alt="Multi-Driver" class="w-full h-full object-cover mix-blend-luminosity opacity-80" data-alt="A sleek, exploded-view 3D render of an in-ear monitor showing multiple balanced armature drivers stacked meticulously inside the transparent shell. The background is a deep, void-like black (#121212) with subtle glowing purple accent lines tracing the audio pathways. The image conveys extreme technical precision and advanced acoustic engineering." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBItu55Q8yH5pf0Uvj7VKQfPM7Q4qOd14JaG8eQSlkCdNKQzP07Ep4mfSi0xYFGYfCnacr5-vymdk3tLTaFJ47d2VVzlPXdTs_7FHynKQzwr0Enc701Nd9EXv4kbDR1GQX44QnvDX63yVJD6TrUiO2oRInik4ZLKCX54eVdESrB5t7eL7K-OVXDVQvdlHcjEQlbD-cFi6Q98CE1d70meiqi-Z951VrEk6zhOVvFj5smvBPTlyD4wc9SqoH1WxI0wVT-oU5VQgaxf14a"/>
+</div>
+<div class="flex-1 space-y-4">
+<h2 class="font-headline-md text-headline-md text-primary">Multi-Driver Configurations</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        Our flagship models utilize complex crossover networks and multiple balanced armature drivers dedicated to specific frequency bands. This ensures that deep, resonant bass never bleeds into crisp, articulate highs. Whether you need a 3-driver setup for stage monitoring or a 10-driver behemoth for studio mixing, we engineer clarity.
+                    </p>
+<button class="neumorphic-extruded mt-4 px-6 py-3 rounded-md font-label-caps text-label-caps text-on-surface hover:text-primary active:neumorphic-inset transition-all duration-200">
+                        EXPLORE TECH
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-surface-container-highest w-full mt-section-gap">
+<div class="flex flex-col items-center gap-gutter px-margin-desktop py-section-gap w-full transition-all duration-300">
+<!-- Brand Logo -->
+<div class="font-display-lg text-headline-md font-bold text-on-surface">
+                AURA AUDIO
+            </div>
+<!-- Footer Links -->
+<div class="flex flex-wrap justify-center gap-base font-body-md text-label-caps">
+<a class="text-secondary hover:text-on-surface hover:text-primary transition-colors" href="#">PRIVACY POLICY</a>
+<a class="text-secondary hover:text-on-surface hover:text-primary transition-colors" href="#">TERMS OF SERVICE</a>
+<a class="text-secondary hover:text-on-surface hover:text-primary transition-colors" href="#">WARRANTY</a>
+<a class="text-secondary hover:text-on-surface hover:text-primary transition-colors" href="#">SHIPPING</a>
+<a class="text-secondary hover:text-on-surface hover:text-primary transition-colors" href="#">CONTACT</a>
+</div>
+<!-- Copyright -->
+<div class="text-secondary text-sm font-label-caps mt-4">
+                © 2024 AURA AUDIO. ENGINEERED FOR PRECISION.
+            </div>
+</div>
+</footer>
+</body></html>

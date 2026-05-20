@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>AURA AUDIO | Engineered for Precision</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary": "#f1bf54",
+                        "surface-variant": "#353534",
+                        "surface-bright": "#393939",
+                        "on-surface": "#e5e2e1",
+                        "error": "#ffb4ab",
+                        "primary-fixed-dim": "#deb7ff",
+                        "on-primary": "#4a007f",
+                        "tertiary-container": "#997000",
+                        "background": "#131313",
+                        "on-primary-fixed": "#2c0050",
+                        "inverse-primary": "#8135c5",
+                        "on-tertiary-fixed-variant": "#5c4200",
+                        "on-secondary": "#2f3131",
+                        "secondary-container": "#454747",
+                        "error-container": "#93000a",
+                        "on-surface-variant": "#cfc2d5",
+                        "on-background": "#e5e2e1",
+                        "surface-container-highest": "#353534",
+                        "on-primary-fixed-variant": "#670fac",
+                        "on-tertiary-fixed": "#261900",
+                        "inverse-surface": "#e5e2e1",
+                        "primary-fixed": "#f0dbff",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-secondary-container": "#b4b5b5",
+                        "secondary-fixed": "#e2e2e2",
+                        "outline": "#988d9e",
+                        "tertiary-fixed-dim": "#f1bf54",
+                        "primary": "#deb7ff",
+                        "on-primary-container": "#ffffff",
+                        "outline-variant": "#4c4353",
+                        "surface-tint": "#deb7ff",
+                        "secondary-fixed-dim": "#c6c6c7",
+                        "surface-container-low": "#1c1b1b",
+                        "surface": "#131313",
+                        "surface-container": "#201f1f",
+                        "on-tertiary": "#402d00",
+                        "primary-container": "#9b51e0",
+                        "on-secondary-fixed-variant": "#454747",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "on-error": "#690005",
+                        "secondary": "#c6c6c7",
+                        "surface-dim": "#131313",
+                        "surface-container-high": "#2a2a2a",
+                        "inverse-on-surface": "#313030",
+                        "on-error-container": "#ffdad6",
+                        "on-tertiary-container": "#080400",
+                        "tertiary-fixed": "#ffdea2"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "64px",
+                        "section-gap": "80px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Montserrat"],
+                        "headline-md": ["Montserrat"],
+                        "body-md": ["Montserrat"],
+                        "display-lg-mobile": ["Montserrat"],
+                        "display-lg": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "display-lg-mobile": ["40px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* 1. Lock the main body to prevent standard window scrolling */
+        html, body { 
+            margin: 0; 
+            padding: 0; 
+            overflow: hidden; 
+        }
+
+        /* 2. Make the main container the actual scrollable area */
+        #main-container {
+            height: 100vh;
+            overflow-y: scroll;
+            scroll-snap-type: y mandatory;
+            /* Hides the scrollbar for a cleaner premium look */
+            scrollbar-width: none; 
+        }
+        #main-container::-webkit-scrollbar { 
+            display: none; 
+        }
+
+        /* 3. The strict snapping rules */
+        .snap-section { 
+            position: relative;
+            height: 100vh; 
+            width: 100%;
+            scroll-snap-align: start;
+            scroll-snap-stop: always; /* THE FIX: Prevents scrolling past sections */
+            overflow: hidden;
+        }
+
+        .carousel-slide {
+            transition: opacity 1s ease-in-out;
+        }
+
+        /* Keep UI buttons looking sharp */
+        .neumorphic-button {
+            background-color: #121212;
+            box-shadow: -5px -5px 10px #1b1b1b, 5px 5px 10px #090909;
+            transition: all 0.2s ease-in-out;
+        }
+        .neumorphic-button:active {
+            box-shadow: inset -2px -2px 5px #1b1b1b, inset 2px 2px 5px #090909;
+        }
+        
+        /* Hide text initially so GSAP can animate it in */
+        .gsap-content > * { opacity: 0; }
+    </style>
+</head>
+<body class="bg-background text-on-surface antialiased font-body-md text-body-md">
+
+<nav class="fixed w-full top-0 z-50 bg-background/80 backdrop-blur-md shadow-[-5px_-5px_10px_rgba(27,27,27,1),5px_5px_10px_rgba(9,9,9,1)] flex justify-between items-center px-margin-desktop py-base max-w-full mx-auto">
+    <div class="font-display-lg text-headline-md font-bold text-on-surface tracking-tighter">AURA AUDIO</div>
+    <div class="hidden md:flex gap-gutter items-center">
+        <a class="font-label-caps text-label-caps tracking-widest text-on-surface-variant hover:text-on-surface transition-all duration-200 hover:scale-105" href="#">CUSTOM</a>
+        <a class="font-label-caps text-label-caps tracking-widest text-on-surface-variant hover:text-on-surface transition-all duration-200 hover:scale-105" href="../shop_aura_audio/shop.html">SHOP</a>
+        <a class="font-label-caps text-label-caps tracking-widest text-on-surface-variant hover:text-on-surface transition-all duration-200 hover:scale-105" href="../sign_in_aura_audio/sign-in.html">SIGN IN</a>
+        <a class="font-label-caps text-label-caps tracking-widest text-on-surface-variant hover:text-on-surface transition-all duration-200 hover:scale-105" href="../about_us_aura_audio/about.html">ABOUT US</a>
+        <a class="font-label-caps text-label-caps tracking-widest text-on-surface-variant hover:text-on-surface transition-all duration-200 hover:scale-105" href="../contact_us_aura_audio/contact.html">CONTACT US</a>
+    </div>
+    <div class="flex gap-4 text-primary">
+        <span class="material-symbols-outlined cursor-pointer hover:scale-105 transition-transform duration-200"><a href="../sign_in_aura_audio/sign-in.html">person</a></span>
+    </div>
+</nav>
+
+<main id="main-container">
+    <section class="snap-section flex flex-col items-center justify-center pt-[80px]">
+        <img alt="High resolution background image of Volür IEMs in a moody purple and dark setting" class="absolute inset-0 w-full h-full object-cover z-0" src="img-main/Hero_PDP-Volur_V3.webp"/>
+        <div class="absolute inset-0 bg-black/40 z-0"></div>
+        <div class="relative z-10 w-full max-w-7xl px-margin-desktop flex flex-col items-center h-full justify-center gsap-content">
+            <h1 class="text-white text-[60px] md:text-[120px] font-bold leading-none tracking-tight drop-shadow-2xl mb-8">Volür</h1>
+            <div class="w-full flex flex-col md:flex-row items-center justify-between mt-auto mb-[10vh] gap-8">
+                <div class="flex gap-16 text-white">
+                    <div class="flex flex-col items-start">
+                        <span class="text-3xl font-bold">Universal</span>
+                        <span class="text-sm tracking-widest uppercase opacity-70">Fit</span>
+                    </div>
+                    <div class="flex flex-col items-start">
+                        <span class="text-3xl font-bold">10</span>
+                        <span class="text-sm tracking-widest uppercase opacity-70">Drivers</span>
+                    </div>
+                    <div class="flex flex-col items-start">
+                        <span class="text-3xl font-bold">$2,499.00</span>
+                        <span class="text-sm opacity-70">Ships in 1-4 Business Days</span>
+                    </div>
+                </div>
+                <div>
+                    <button class="px-8 py-3 rounded-full border border-white/50 neumorphic-button text-white font-bold tracking-widest text-sm">
+                        ADD TO CART
+                    </button>
+                </div>
+            </div>
+            <div class="absolute bottom-8 text-white/50 text-xs">
+                *m12 (gold) apex modules included with purchase for a limited time
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Best Seller Carousel -->
+    <section class="snap-section relative flex flex-col items-center justify-center pt-[80px] overflow-hidden">
+        <div class="carousel-container absolute inset-0 w-full h-full">
+            <!-- Slide 1 -->
+            <div class="carousel-slide absolute inset-0 w-full h-full opacity-100 z-10">
+                <img alt="Scarlet Mini" class="absolute inset-0 w-full h-full object-cover z-0" src="img-main/fatfreq-scarlet-mini.webp"/>
+                <div class="absolute inset-0 bg-black/40 z-0"></div>
+                <div class="relative z-10 w-full h-full flex flex-col items-center justify-center text-center px-margin-desktop">
+                    <span class="text-white font-label-caps tracking-widest text-sm mb-4">"SCARLET" MINI</span>
+                    <h2 class="text-white text-[80px] md:text-[100px] font-bold font-display-lg drop-shadow-2xl leading-none uppercase tracking-tight">WORLD'S DEEPEST BASS</h2>
+                    <p class="text-white mt-6 text-lg font-body-md drop-shadow-lg">Pushing the Frontiers for Sub-Bass and Ultra-high Frequency Response</p>
+                </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="carousel-slide absolute inset-0 w-full h-full opacity-0 z-0">
+                <img alt="Grand Maestro Anniversary" class="absolute inset-0 w-full h-full object-cover z-0" src="img-main/GMAFE.webp"/>
+                <div class="absolute inset-0 bg-black/40 z-0"></div>
+                <div class="relative z-10 w-full h-full flex flex-col items-center justify-center text-center px-margin-desktop">
+                    <span class="text-white font-label-caps tracking-widest text-sm mb-4">GRAND MAESTRO ANNIVERSARY</span>
+                    <h2 class="text-white text-[80px] md:text-[100px] font-bold font-display-lg drop-shadow-2xl leading-none uppercase tracking-tight">DIVINE SYNERGY</h2>
+                    <p class="text-white mt-6 text-lg font-body-md drop-shadow-lg max-w-3xl">A masterful collaboration between FATfreq and Effect Audio...</p>
+                </div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="carousel-slide absolute inset-0 w-full h-full opacity-0 z-0">
+                <img alt="Maestro Mini" class="absolute inset-0 w-full h-full object-cover z-0" src="img-main/fatfreq-maestro-mini.webp"/>
+                <div class="absolute inset-0 bg-black/40 z-0"></div>
+                <div class="relative z-10 w-full h-full flex flex-col items-center justify-center text-center px-margin-desktop">
+                    <span class="text-white font-label-caps tracking-widest text-sm mb-4">MAESTRO MINI</span>
+                    <h2 class="text-white text-[80px] md:text-[100px] font-bold font-display-lg drop-shadow-2xl leading-none uppercase tracking-tight">VANGUARDS OF BASS EVOLUTION</h2>
+                    <p class="text-white mt-6 text-lg font-body-md drop-shadow-lg">The sub-bass IEM that all audiophile Basshead IEMs are measured against.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="snap-section flex flex-col items-center justify-center pt-[80px]">
+        <img alt="Custom In-Ear Monitors" class="absolute inset-0 w-full h-full object-cover z-0" src="img-main/custom-iems.webp"/>
+        <div class="absolute inset-0 bg-black/20 z-0"></div>
+        <div class="relative z-10 w-full max-w-7xl px-margin-desktop flex flex-col items-center h-full justify-between py-[15vh] gsap-content">
+            <h2 class="text-white text-[45px] md:text-[64px] font-bold drop-shadow-lg text-center mt-[5vh]">Custom In-Ear Monitors</h2>
+            <div class="flex flex-wrap justify-center gap-8 mt-auto mb-[5vh]">
+                <button class="px-10 py-3 rounded-full border border-white/30 neumorphic-button text-white font-bold tracking-widest text-sm bg-black/60">
+                    CUSTOMIZE
+                </button>
+                <button class="px-10 py-3 rounded-full border border-white/30 neumorphic-button text-white font-bold tracking-widest text-sm bg-black/60">
+                    LEARN MORE
+                </button>
+            </div>
+            <span class="material-symbols-outlined absolute bottom-8 text-white/70 cursor-pointer animate-bounce text-3xl">keyboard_arrow_down</span>
+        </div>
+    </section>
+
+    <section class="snap-section flex flex-col items-center justify-center pt-[80px]">
+        <img alt="Audio Accessories" class="absolute inset-0 w-full h-full object-cover z-0" src="img-main/accessories-page.jpg"/>
+        <div class="absolute inset-0 bg-black/20 z-0"></div>
+        <div class="relative z-10 w-full max-w-7xl px-margin-desktop flex flex-col items-center h-full justify-between py-[15vh] gsap-content">
+            <h2 class="text-white text-[50px] md:text-[64px] font-bold drop-shadow-lg text-center mt-[5vh]">Accessories</h2>
+            <div class="flex gap-8 mt-auto mb-[5vh]">
+                <button class="px-12 py-3 rounded-full border border-white/30 neumorphic-button text-white font-bold tracking-widest text-sm bg-black/60">
+                    ORDER NOW
+                </button>
+            </div>
+            <span class="material-symbols-outlined absolute bottom-8 text-white/70 cursor-pointer animate-bounce text-3xl">keyboard_arrow_down</span>
+        </div>
+    </section>
+
+    <section class="snap-section flex flex-col items-center justify-center pt-[80px]">
+        <img alt="Support and Service" class="absolute inset-0 w-full h-full object-cover z-0" src="img-main/support-page.webp"/>
+        <div class="absolute inset-0 bg-black/50 z-0"></div>
+        <div class="relative z-10 w-full max-w-7xl px-margin-desktop flex flex-col items-center h-full justify-between pt-[10vh] pb-8 gsap-content">
+            <h2 class="text-white text-[50px] md:text-[64px] font-bold drop-shadow-lg text-center">Support</h2>
+            <div class="flex flex-wrap justify-center gap-8 mt-auto mb-[10vh]">
+                <button class="px-10 py-3 rounded-full border border-white/30 neumorphic-button text-white font-bold tracking-widest text-sm bg-black/60">
+                    SERVICE REQUEST
+                </button>
+                <button class="px-16 py-3 rounded-full border border-white/50 bg-white/70 text-black font-bold tracking-widest text-sm hover:bg-white hover:shadow-[0_0_20px_rgba(155,81,224,0.6)] transition-all duration-300">
+                    FAQ
+                </button>
+            </div>
+            <div class="flex flex-col items-center gap-6 text-white/80 w-full text-sm">
+                <div class="flex gap-6 mb-2">
+                    <span class="font-bold text-lg hover:text-primary transition-colors cursor-pointer">X</span>
+                    <span class="font-bold text-lg hover:text-primary transition-colors cursor-pointer">FB</span>
+                    <span class="font-bold text-lg hover:text-primary transition-colors cursor-pointer">IG</span>
+                    <span class="font-bold text-lg hover:text-primary transition-colors cursor-pointer">YT</span>
+                </div>
+                <div class="flex flex-wrap justify-center gap-6 tracking-wide font-medium">
+                    <span>© 2024 AURA AUDIO</span>
+                    <a class="hover:text-primary transition-colors" href="#">Privacy</a>
+                    <a class="hover:text-primary transition-colors" href="../contact_us_aura_audio/contact.html">Contact Us</a>
+                    <a class="hover:text-primary transition-colors" href="../about_us_aura_audio/about.html">About Us</a>
+                </div>
+                <div class="text-2xl font-bold tracking-widest mt-4 text-white">ENGINEERED FOR PRECISION.</div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    let sections = gsap.utils.toArray(".snap-section");
+
+    sections.forEach((section) => {
+        let content = section.querySelector(".gsap-content");
+        
+        if (content) {
+            let elementsToAnimate = content.children;
+
+            gsap.fromTo(elementsToAnimate, 
+                { 
+                    opacity: 0, 
+                    y: 40 
+                },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.8,
+                    stagger: 0.15,
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: section,
+                        scroller: "#main-container", // CRITICAL: Tells GSAP to watch the wrapper, not the window
+                        start: "top 60%", 
+                        toggleActions: "play reverse play reverse"
+                    }
+                }
+            );
+        }
+    });
+
+    // Carousel Logic
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.carousel-slide');
+    
+    if(slides.length > 0) {
+        setInterval(() => {
+            slides[currentSlide].classList.remove('opacity-100', 'z-10');
+            slides[currentSlide].classList.add('opacity-0', 'z-0');
+            
+            currentSlide = (currentSlide + 1) % slides.length;
+            
+            slides[currentSlide].classList.remove('opacity-0', 'z-0');
+            slides[currentSlide].classList.add('opacity-100', 'z-10');
+        }, 5000);
+    }
+</script>
+</body>
+</html>
