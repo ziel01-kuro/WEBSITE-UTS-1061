@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AURA AUDIO - Sign In</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary-fixed-dim": "#c6c6c7",
+                      "surface-container-highest": "#353534",
+                      "surface-bright": "#393939",
+                      "background": "#131313",
+                      "primary-fixed": "#f0dbff",
+                      "on-surface": "#e5e2e1",
+                      "secondary": "#c6c6c7",
+                      "surface-container-high": "#2a2a2a",
+                      "inverse-surface": "#e5e2e1",
+                      "tertiary-container": "#997000",
+                      "on-secondary-fixed-variant": "#454747",
+                      "on-secondary": "#2f3131",
+                      "outline-variant": "#4c4353",
+                      "inverse-primary": "#8135c5",
+                      "tertiary": "#f1bf54",
+                      "primary-container": "#9b51e0",
+                      "on-error": "#690005",
+                      "primary": "#deb7ff",
+                      "on-background": "#e5e2e1",
+                      "on-error-container": "#ffdad6",
+                      "on-primary": "#4a007f",
+                      "error": "#ffb4ab",
+                      "on-tertiary-fixed": "#261900",
+                      "on-primary-fixed-variant": "#670fac",
+                      "on-primary-container": "#ffffff",
+                      "surface-variant": "#353534",
+                      "on-primary-fixed": "#2c0050",
+                      "on-tertiary": "#402d00",
+                      "tertiary-fixed": "#ffdea2",
+                      "on-secondary-container": "#b4b5b5",
+                      "secondary-fixed": "#e2e2e2",
+                      "on-secondary-fixed": "#1a1c1c",
+                      "on-tertiary-fixed-variant": "#5c4200",
+                      "surface-tint": "#deb7ff",
+                      "inverse-on-surface": "#313030",
+                      "tertiary-fixed-dim": "#f1bf54",
+                      "secondary-container": "#454747",
+                      "surface-container-low": "#1c1b1b",
+                      "on-surface-variant": "#cfc2d5",
+                      "outline": "#988d9e",
+                      "surface-dim": "#131313",
+                      "surface": "#131313",
+                      "on-tertiary-container": "#080400",
+                      "primary-fixed-dim": "#deb7ff",
+                      "surface-container": "#201f1f",
+                      "error-container": "#93000a",
+                      "surface-container-lowest": "#0e0e0e"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "section-gap": "80px",
+                      "margin-desktop": "64px",
+                      "gutter": "24px",
+                      "base": "8px",
+                      "margin-mobile": "16px"
+              },
+              "fontFamily": {
+                      "display-lg-mobile": [
+                              "Montserrat"
+                      ],
+                      "body-md": [
+                              "Montserrat"
+                      ],
+                      "label-caps": [
+                              "Montserrat"
+                      ],
+                      "headline-md": [
+                              "Montserrat"
+                      ],
+                      "display-lg": [
+                              "Montserrat"
+                      ]
+              },
+              "fontSize": {
+                      "display-lg-mobile": [
+                              "40px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.0",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "64px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .neumorphic-extruded {
+            background-color: #121212;
+            box-shadow: -5px -5px 10px #1b1b1b, 5px 5px 10px #090909;
+        }
+        .neumorphic-inset {
+            background-color: #121212;
+            box-shadow: inset -2px -2px 5px #1b1b1b, inset 2px 2px 5px #090909;
+            border: 1px solid #1b1b1b;
+        }
+        .neumorphic-btn-active:active {
+            box-shadow: inset -2px -2px 5px #1b1b1b, inset 2px 2px 5px #090909;
+        }
+    </style>
+</head>
+<body class="bg-[#121212] text-on-surface font-body-md min-h-screen flex flex-col selection:bg-primary-container selection:text-on-primary-container">
+<main class="flex-grow flex items-center justify-center px-margin-mobile md:px-margin-desktop py-section-gap">
+<div class="neumorphic-extruded rounded-xl p-8 md:p-12 w-full max-w-md">
+<div class="text-center mb-8">
+<h1 class="font-headline-md text-headline-md text-primary tracking-widest mb-2">AURA AUDIO</h1>
+<p class="text-on-surface-variant font-label-caps text-label-caps tracking-widest">AUTHENTICATION</p>
+</div>
+<form class="space-y-6">
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-2 ml-1" for="email">EMAIL ADDRESS</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">mail</span>
+<input class="w-full neumorphic-inset rounded-lg py-4 pl-12 pr-4 text-on-surface focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all duration-300 font-body-md placeholder-on-surface-variant/50" id="email" placeholder="ENTER EMAIL" type="email"/>
+</div>
+</div>
+<div>
+<div class="flex justify-between items-center mb-2 ml-1">
+<label class="block font-label-caps text-label-caps text-on-surface-variant" for="password">PASSWORD</label>
+<a class="font-label-caps text-label-caps text-primary hover:text-primary-fixed transition-colors duration-300" href="#">FORGOT?</a>
+</div>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">lock</span>
+<input class="w-full neumorphic-inset rounded-lg py-4 pl-12 pr-4 text-on-surface focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all duration-300 font-body-md placeholder-on-surface-variant/50" id="password" placeholder="ENTER PASSWORD" type="password"/>
+</div>
+</div>
+<div class="pt-4">
+<button class="w-full bg-primary-container text-on-primary-container font-label-caps text-label-caps py-4 rounded-lg tracking-widest hover:bg-inverse-primary transition-colors duration-300 shadow-[0_0_15px_rgba(155,81,224,0.3)] hover:shadow-[0_0_25px_rgba(155,81,224,0.5)] neumorphic-btn-active" type="submit">
+                        LOGIN
+                    </button>
+</div>
+<div class="text-center pt-4">
+<p class="text-on-surface-variant font-label-caps text-label-caps">
+                        NEW USER? <a class="text-primary hover:text-primary-fixed transition-colors ml-2" href="#">CREATE ACCOUNT</a>
+</p>
+</div>
+</form>
+</div>
+</main>
+</body></html>
